@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('buildyourownclassifier:server');
+var debug = require('debug')('buildclassifier:server');
 var http = require('http');
 
 /**
