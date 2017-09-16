@@ -13,28 +13,19 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <span class="glyphicon glyphicon-cloud-upload"></span>
-            <h2>File Uploader</h2>
-            <h4>coligo.io</h4>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar"></div>
-            </div>
-            <button class="btn btn-lg upload-btn" type="button">Upload File</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <input id="upload-input" type="file" name="uploads[]" multiple="multiple"></br>
+    <form id="frmUploader" enctype="multipart/form-data" action="upload/" method="post">
+    <input type="file" name="imgUploader" multiple />
+    <input type="submit" name="submit" id="btnSubmit" value="Upload" /> </form>
+
+<script>
+    $(document).ready(function() {
+                var options = {
+                        beforeSubmit: showRequest, // pre-submit callback success: showResponse // post-submit callback }; // bind to the form's submit event $('#frmUploader').submit(function () { $(this).ajaxSubmit(options); // always return false to prevent standard browser submit and page navigation return false; }); }); // pre-submit callback function showRequest(formData, jqForm, options) { alert('Uploading is starting.'); return true; } // post-submit callback function showResponse(responseText, statusText, xhr, $form) { alert('status: ' + statusText + '\n\nresponseText: \n' + responseText ); }
+</script>
 
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="javascripts/upload.js"></script>
+
 </body>
 </html>
