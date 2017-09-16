@@ -9,8 +9,11 @@ def read_in():
 
 def main():
     #get our data as an array from read_in()
-    lines = read_in()
+    lines = read_in()["data"]
+
     print(json.dumps(lines))
+
+    #print(json.dumps(lines))
 
 
 #start process
