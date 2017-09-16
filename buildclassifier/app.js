@@ -9,6 +9,9 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+var formidable = require('formidable');
+var fs = require('fs');
+
 var app = express();
 
 // view engine setup
