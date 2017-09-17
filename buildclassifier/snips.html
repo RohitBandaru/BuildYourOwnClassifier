@@ -1,0 +1,64 @@
+
+          var markers = [{ "position": "128.3657142857143", "markerPosition": "7" },
+               { "position": "235.1944023323615", "markerPosition": "19" },
+               { "position": "42.5978231292517", "markerPosition": "-3" }];
+/*
+          $.ajax({
+            type: 'POST',
+            url: "/upload",
+            dataType: 'json',
+            data: markers,
+            success: function(obj){
+              console.log("file uploaded")
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+                console.log("textStatus: "+textStatus);
+                console.log("errorThrown: "+errorThrown);
+            }
+          });
+*/
+
+  /*function upload(req, res){
+    console.log("ye")
+  } 
+
+
+  upload(req, res, function(err) {
+      if (err) {
+         return res.end("Something went wrong!");
+      }
+      return res.end("File uploaded sucessfully!.");
+    });
+
+   var Storage = multer.diskStorage({
+     destination: function(req, file, callback) {
+         callback(null, "public/data");
+     },
+     filename: function(req, file, callback) {
+        console.log(typeof(file))
+         callback(null, file.originalname);
+     }
+ });
+  var upload = multer({
+     storage: Storage
+ }).array("imgUploader", 3); //Field name and max count
+    */
+
+
+          <!-- Upload Finished 
+          <div class="js-upload-finished">
+            <h3>Processed files</h3>
+            <div class="list-group">
+            </div>
+          </div>
+          -->
+      <!--
+    <form id="frmUploader" enctype="multipart/form-data" action="upload/" method="post">
+      <label class="btn btn-default btn-file">
+        <input type="file" name="dataUpload" multiple />
+      </label>
+      <label class="btn btn-default">
+        <input type="submit" name="submit" id="btnSubmit" value="Upload" class="btn btn-primary"/> 
+      </label>
+    </form>
+-->

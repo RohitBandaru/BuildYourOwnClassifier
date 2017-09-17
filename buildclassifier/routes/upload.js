@@ -4,34 +4,18 @@
  var multer = require('multer');
  var bodyParser = require('body-parser');
  var app = Express();
+ var fs = require('fs');
  app.use(bodyParser.json());
+ var shortid = require('shortid');
 
 module.exports = function(app){
-
- var Storage = multer.diskStorage({
-     destination: function(req, file, callback) {
-         callback(null, "public/data");
-     },
-     filename: function(req, file, callback) {
-         callback(null, file.originalname);
-     }
- });
-  var upload = multer({
-     storage: Storage
- }).array("imgUploader", 3); //Field name and max count
-
   app.post('/upload', (req, res) => {
-    console.log('file upload')
-    upload(req, res, function(err) {
-      if (err) {
-         return res.end("Something went wrong!");
-      }
-      return res.end("File uploaded sucessfully!.");
-    });
+    var filename = "data"+shortid.generate();
+    fs.writeFile("public/data/+"+filename+".json", JSON.stringify(req.body), 'utf8', function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log(filename+" was saved!");
+    }); 
   });
-
-  /*function upload(req, res){
-    console.log("ye")
-  } */
-
 }

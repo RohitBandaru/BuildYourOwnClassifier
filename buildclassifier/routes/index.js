@@ -13,6 +13,11 @@ router.get('/', function(req, res, next) {
 app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, 'views/index.ejs'));
 });
+app.get('/', function(req, res){
+  res.sendFile(path.join(__dirname, 'views/train.ejs'));
+});
+
+
 
 
 module.exports = router;
